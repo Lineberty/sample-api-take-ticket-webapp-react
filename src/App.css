@@ -1,0 +1,124 @@
+.lb-webappSdkTest {
+  width: 60vw;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-left: 20vw;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.backButton {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+}
+
+.list-item {
+  color: black;
+  border-bottom: 1px solid rgb(210,210,210);
+  padding: 3vh 0px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+  text-align: left;
+}
+
+.list {
+  width: 80%;
+  margin-left: 10%;
+  text-align: left;
+}
+
+.card {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 5vh;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.button {
+  line-height: 36px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.backButton {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+}
+
+.button.primary {
+  background-color: #3f51b5;
+}
+
+.button.warn {
+  background-color: #f44336;
+}
+
+.button.accent {
+  background-color: #ff4081;
+}
+
+.ticket-container {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  width: 60%;
+  margin: auto;
+  margin-bottom: 5vh;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.ticket-header {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.ticket-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ticket-footer button{
+  margin-right: 10px;
+}
+
+.ticket-footer button:last-child{
+  margin-right: 0px;
+}
