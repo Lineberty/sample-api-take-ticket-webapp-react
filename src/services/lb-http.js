@@ -22,6 +22,10 @@ export default class lbHttp {
 
   runRequest = async (url, method = 'GET', queryParams = {}, body = {}, headers = {}) => {
 
+    headers[ 'Access-Control-Allow-Origin' ] = '*'
+    headers[ 'Access-Control-Allow-Methods' ] = 'GET, POST, PUT, OPTIONS'
+    headers[ 'Access-Control-Allow-Headers' ] = 'X-Requested-With'
+
     const axiosConfig = {
       timeout: 10000,
       headers: headers,
@@ -45,6 +49,7 @@ export default class lbHttp {
         default:
           throw new Error('Bad request method')
       }
+
       return res.data
     } catch (err) {
       console.log(err)
@@ -335,10 +340,10 @@ export default class lbHttp {
     }
   }
 
-  export const reportTicket = async ( ticketId ) => {
-    let url = ConfigService.reportTicket
+  export const postponeTicket = async ( ticketId ) => {
+    let url = ConfigService.postponeTicket
     url = url.replace( '{ticketId}', ticketId )
-    const body = { reportFor: this.localStorage.getSelectedBookedFor() }
+    const body = { postponeTo: this.localStorage.getSelectedBookedFor() }
     const httpOptions = await this.generateHeaderForLineberty( true )
 
     try {
@@ -346,7 +351,7 @@ export default class lbHttp {
       this.localStorage.setTicket( ticket )
       return ticket
     } catch (error) {
-      console.log( 'Error while reporting ticket' )
+      console.log( 'Error while postponing ticket' )
       console.log(error)
       throw error
     }
@@ -355,7 +360,7 @@ export default class lbHttp {
   export const rateTicket = async ( ticketId ) => {
     let url = ConfigService.rateTicket
     url = url.replace( '{ticketId}', ticketId )
-    const body = { reportFor: this.localStorage.getSelectedBookedFor() }
+    const body = { postponeTo: this.localStorage.getSelectedBookedFor() }
     const httpOptions = await this.generateHeaderForLineberty( true )
 
     try {

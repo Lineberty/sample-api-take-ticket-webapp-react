@@ -5,19 +5,21 @@ function getTicketState ( state ) {
   switch ( state ) {
     case 0:
       return 'BOOKED'
-    case 1:
+    case 50:
+      return 'TO CONFIRM'
+    case 100:
       return 'ALERTED'
-    case 2:
+    case 200:
       return 'CALLED'
-    case 3:
+    case 300:
       return 'ON HOLD'
-    case 4:
+    case 400:
       return 'NO SHOW'
-    case 5:
+    case 500:
       return 'IN PROGRESS'
-    case 6:
+    case 600:
       return 'CANCELLED'
-    case 7:
+    case 700:
       return 'DONE'
     default:
       return 'UNKNOW'
@@ -27,11 +29,11 @@ function getTicketState ( state ) {
 function Ticket (props) {
 
   let footer
-  if ( props.ticket.state < 6 ) {
+  if ( props.ticket.state < 600 ) {
     footer = (
       <div className="ticket-footer">
         <button className="button warn" onClick={() => props.onCancel()} > Cancel </button>
-        <button className="button primary" onClick={() => props.onReport()} > Report </button>
+        <button className="button primary" onClick={() => props.onPostpone()} > Postpone </button>
         <button className="button accent" onClick={() => props.rateTicket()} > Rate </button>
       </div>
     )
@@ -115,12 +117,12 @@ export class TicketHistory extends React.Component {
 
   }
 
-  reportTicket( ticket ) {
-    alert( 'Watch the document for more informations' )
+  postponeTicket( ticket ) {
+    alert( 'See the API documention for more informations' )
   }
 
   rateTicket( ticket ) {
-    alert( 'Watch the document for more informations' )
+    alert( 'See the API documention for more informations' )
   }
 
   getPlaceList() {
@@ -131,7 +133,7 @@ export class TicketHistory extends React.Component {
           key={ this.state.tickets[k].ticketId }
           ticket={ this.state.tickets[k] }
           onCancel={() => this.cancelTicket( this.state.tickets[k] )}
-          onReport={() => this.reportTicket( this.state.tickets[k] )}
+          onPostpone={() => this.postponeTicket( this.state.tickets[k] )}
           onRate={() => this.rateTicket( this.state.tickets[k] )}
         />
       )

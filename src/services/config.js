@@ -19,7 +19,7 @@ export const bookingTicket = linebertyServer + linebertyApiVersion + '/queues/{q
 export const cancelTicket = linebertyServer + linebertyApiVersion + '/user/tickets/{ticketId}/cancel'
 
 /*
-export const reportTicket = linebertyServer + linebertyApiVersion + '/user/tickets/{ticketId}/report'
+export const postponeTicket = linebertyServer + linebertyApiVersion + '/user/tickets/{ticketId}/postpone'
 export const getQueuesState = linebertyServer + linebertyApiVersion + '/queues/state'
 export const getQueuesEligibility = linebertyServer + linebertyApiVersion + '/queues/eligibility'
 export const rateTicket = linebertyServer + linebertyApiVersion + '/user/tickets/{ticketId}/rate'
@@ -29,3 +29,4 @@ export const rateTicket = linebertyServer + linebertyApiVersion + '/user/tickets
 export const defaultLang = 'en_US'
 export const timeToRefreshToken = 1000 * 60 * 5 // 5 min
 export const sourceBookingTicket = 'WEB_APP_SDK_TEST'
+
